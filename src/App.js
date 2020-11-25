@@ -1,3 +1,5 @@
+import './stylesheet/app.scss'
+
 function App() {
   return (
     <div className="App">
