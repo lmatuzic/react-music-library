@@ -5,14 +5,13 @@ import { faPlay, faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-i
 export default function Player() {
   return (
     <div className="player">
-      <h1>Music player</h1>
-      <div className="time-control">Player controller
+      <div className="time-control">
         <span>start</span>
         <input type="range"/> 
         <span>end</span>
       </div>
 
-      <div className="play-control">
+      <div className="player__controls">
         <FontAwesomeIcon className="icon icon-previous" size="2x" icon={faAngleLeft} />
         <FontAwesomeIcon className="icon icon-play" size="2x" icon={faPlay} />
         <FontAwesomeIcon className="icon icon-next" size="2x" icon={faAngleRight} />
