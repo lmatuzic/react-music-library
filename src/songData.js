@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 function songData() {
   return [
     {
-      name: "Sir Psycho Sexy",
+      name: "Easily",
       cover: "https://images-na.ssl-images-amazon.com/images/I/A1ptbBS2LNL._AC_SL1500_.jpg",
       artist: "Red Hot Chilli Peppers",
       audio: "http://hcmaslov.d-real.sci-nnov.ru/public/mp3/Red%20Hot%20Chili%20Peppers/Red%20Hot%20Chili%20Peppers%20'Easily'.mp3",
@@ -13,7 +13,7 @@ function songData() {
     },
     {
       name: "No Shelter",
-      cover: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcR-LqRpnFb3W-sEIBFAQBSwEc5phshWwmT_j7UBY-IQj0dl5-jB%26s&sp=1606415373T1d2a885a1fb5324af55ae9dbacd174c0a0084bdbdc6bb00861dda38bc9a745d8",
+      cover: "https://upload.wikimedia.org/wikipedia/en/5/51/RAtM-BattleofLosAngeles.jpeg",
       artist: "Rage Against The Machine",
       audio: "https://www.sinj.com/sounds/mp3s/Rock/RATM/Rage%20Against%20The%20Machine%20-%20No%20Shelter.mp3",
       color: ["#0D0E12", "#EEEEEC"],
@@ -31,10 +31,10 @@ function songData() {
     },
     {
       name: "Canned Heat",
-      cover: "https://www.startpage.com/av/proxy-image?piurl=https%3A%2F%2Fencrypted-tbn0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcTeh_YnNi6C4eIoEBjbFu96SftR4_PbnsDfVHc4XBIbdeeg_S8%26s&sp=1606415537T3431a56a9e1993432c1896eb0e504acb38069f846e108a6686978c8d7a126530",
+      cover: "https://upload.wikimedia.org/wikipedia/en/5/5c/Synkronized.png",
       artist: "Jamiroquai",
       audio: "https://jacobsm.com/geedryve/records/mp3s/Jamiroquai/High%20Times-%20Singles%201992-2006/Canned%20Heat.mp3",
-      color: ["#FFFFFF", "#000000"],
+      color: ["##D2D4E4", "#795D49"],
       id: uuidv4(),
       active: false,
     },
