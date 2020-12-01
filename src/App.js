@@ -1,8 +1,9 @@
 import {useState} from 'react'
+import songData from './songData'
 import Song from './components/Song'
 import Player from './components/Player'
-import songData from './songData'
 import Library from './components/Library'
+import Toggle from './components/Toggle'
 import './stylesheet/app.scss'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Library 
         songs={songs}
         setCurrentSong={setCurrentSong}
+        setSongs={setSongs}
       />
 
       <Song 
@@ -26,6 +28,8 @@ function App() {
         setIsPlaying={setIsPlaying}
         currentSong={currentSong}
        />
+
+      <Toggle />
     </div>
   );
 }

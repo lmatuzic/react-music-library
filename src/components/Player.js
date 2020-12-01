@@ -45,7 +45,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
   const timeFormat = (time) => {
     const seconds = Math.floor(time % 60);
     const minutes = Math.floor(time / 60); 
-    const formatedTime = ('' + minutes).substr(-2) + ':' + ('0' + seconds).substr(-2);
+    const formatedTime = ('0' + minutes).substr(-2) + ':' + ('0' + seconds).substr(-2);
 
     return formatedTime;
   }
