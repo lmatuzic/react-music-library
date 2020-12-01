@@ -1,9 +1,9 @@
 import React from 'react'
 import LibrarySong from './LibrarySong'
 
-export default function Library({songs, setCurrentSong, setSongs}) {
+export default function Library({songs, setCurrentSong, setSongs, libraryStatus}) {
   return (
-    <div className="library">
+    <div className={`library ${libraryStatus ? 'active' : ''}`}>
       <h2>Library</h2>
       <div className="library-song__list">
         {songs.map(song => (
