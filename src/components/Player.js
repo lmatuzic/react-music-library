@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faAngleLeft, faAngleRight, faPause } from '@fortawesome/free-solid-svg-icons'
 
@@ -45,10 +45,17 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
   const timeFormat = (time) => {
     const seconds = Math.floor(time % 60);
     const minutes = Math.floor(time / 60); 
-    const formatedTime = ('0' + minutes).substr(-2) + ':' + ('0' + seconds).substr(-2);
+    const formatedTime = ('' + minutes).substr(-2) + ':' + ('0' + seconds).substr(-2);
 
     return formatedTime;
   }
+
+  // Whenever the current song changes and the status is playing, automatically play the new song
+  useEffect(() => {
+    if (isPlaying && refAudio.current.paused) {
+      refAudio.current.play()
+    }
+  }, [isPlaying, currentSong]) // only re-run this effect when isPlaying state and current song are changed
 
   return (
     <div className="player">
@@ -56,7 +63,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
         <span>{timeFormat(songInfo.currentTime)}</span>
         <input 
           min={0} 
-          max={songInfo.duration}
+          max={songInfo.duration || 0}
           value={songInfo.currentTime}
           onChange={drag}
           type="range"

@@ -7,13 +7,14 @@ import './stylesheet/app.scss'
 
 function App() {
   const [songs, setSongs] = useState(songData());
-  const [currentSong, setCurrentSong] = useState(songs[2]);
+  const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div className="App">
       <Library 
         songs={songs}
+        setCurrentSong={setCurrentSong}
       />
 
       <Song 
