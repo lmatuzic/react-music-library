@@ -3,13 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faAngleLeft, faAngleRight, faPause } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function Player({currentSong, isPlaying, setIsPlaying}) {
+export default function Player({songs, currentSong, setCurrentSong, isPlaying, setIsPlaying}) {
   const refAudio = useRef(null);
 
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0
   });
+
 
   const playSong = () => {
     if (isPlaying) { 
@@ -22,6 +23,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
     }
   }
 
+
   const timeUpdate = (e) => {
     const current = e.target.currentTime;
     const duration = e.target.duration;
@@ -33,6 +35,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
     })
   }
 
+
   const drag = (e) => {
     refAudio.current.currentTime = e.target.value;
 
@@ -42,6 +45,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
     });
   }
 
+
   const timeFormat = (time) => {
     const seconds = Math.floor(time % 60);
     const minutes = Math.floor(time / 60); 
@@ -49,6 +53,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
 
     return formatedTime;
   }
+  
 
   // Whenever the current song changes and the status is playing, automatically play the new song
   useEffect(() => {
@@ -56,6 +61,30 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
       refAudio.current.play()
     }
   }, [isPlaying, currentSong]) // only re-run this effect when isPlaying state and current song are changed
+
+
+  const previousSong = () => {
+    const currentSongIndex = songs.findIndex((song) => song.id === currentSong.id)
+
+    if (currentSongIndex !== 0) {
+      setCurrentSong(songs[currentSongIndex - 1]);
+    } 
+    else {
+      setCurrentSong(songs[songs.length - 1]);
+    }
+  }
+
+  const nextSong = () => {
+    const currentSongIndex = songs.findIndex((song) => song.id === currentSong.id)
+
+    if (currentSongIndex < songs.length - 1) {
+      setCurrentSong(songs[currentSongIndex + 1]);
+    } 
+    else {
+      setCurrentSong(songs[0]);
+    }
+  }
+
 
   return (
     <div className="player">
@@ -76,6 +105,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
           className="icon icon-previous" 
           size="2x" 
           icon={faAngleLeft} 
+          onClick={() => previousSong()}
         />
 
         <FontAwesomeIcon 
@@ -89,6 +119,7 @@ export default function Player({currentSong, isPlaying, setIsPlaying}) {
           className="icon icon-next" 
           size="2x" 
           icon={faAngleRight} 
+          onClick={() => nextSong()}
         />
       </div>
 
