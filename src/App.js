@@ -16,6 +16,7 @@ function App() {
     <div className="App">
       <Library 
         songs={songs}
+        currentSong={currentSong}
         setCurrentSong={setCurrentSong}
         setSongs={setSongs}
         libraryStatus={libraryStatus}

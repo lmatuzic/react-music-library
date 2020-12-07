@@ -53,7 +53,7 @@ export default function Player({songs, currentSong, setCurrentSong, isPlaying, s
 
     return formatedTime;
   }
-  
+
 
   // Whenever the current song changes and the status is playing, automatically play the new song
   useEffect(() => {
@@ -97,7 +97,7 @@ export default function Player({songs, currentSong, setCurrentSong, isPlaying, s
           onChange={drag}
           type="range"
         /> 
-        <span>{timeFormat(songInfo.duration)}</span>
+        <span>{songInfo.duration ? timeFormat(songInfo.duration) : '0:00'}</span>
       </div>
 
       <div className="player__controls">

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function LibrarySong({song, setCurrentSong, songs, setSongs}) {
+export default function LibrarySong({song, currentSong, setCurrentSong, songs, setSongs}) {
   const selectSong = () => {setCurrentSong(song)};
   const updatedSongs = () => {
     setSongs(
@@ -18,7 +18,7 @@ export default function LibrarySong({song, setCurrentSong, songs, setSongs}) {
         selectSong();
         updatedSongs();
       }}
-      className={`library-song ${song.active ? 'selected' : " "}`}
+      className={`library-song ${song.id === currentSong.id ? "selected" : ""}`}
     >
       <img src={song.cover} alt=""></img>
       <div>
