@@ -74,11 +74,11 @@ export default function Player({songs, currentSong, setCurrentSong, isPlaying, s
     }
   }
 
-  const nextSong = async () => {
+  const nextSong = () => {
     const currentSongIndex = songs.findIndex((song) => song.id === currentSong.id)
 
     if (currentSongIndex < songs.length - 1) {
-      await setCurrentSong(songs[currentSongIndex + 1]);
+      setCurrentSong(songs[currentSongIndex + 1]);
     } 
     else {
       setCurrentSong(songs[0]);

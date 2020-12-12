@@ -8,6 +8,9 @@
     justify-content: center;
     align-items: center;
     width: 50%;
+    @media (max-width: 767.98px) {
+      width: 90%;
+    }
     input {
       width: 100%;
       padding: 1.5rem 0;
@@ -22,6 +25,9 @@
     justify-content: space-evenly;
     align-items: center;
     width: 25%;
+    @media (max-width: 767.98px) {
+      width: 50%;
+    }
     .icon {
       &:hover {
         cursor: pointer;
