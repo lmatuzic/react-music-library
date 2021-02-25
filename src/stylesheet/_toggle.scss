@@ -1,0 +1,23 @@
+.library-toggle {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: fit-content;
+  cursor: pointer;
+  padding: 1rem;
+  background-color: rgb(175, 216, 177);
+  border-radius: 4px;
+  transition: background-color 0.3s ease-out;
+  outline: none;
+  &:hover {
+    background-color: darken($color: rgb(175, 216, 177), $amount: 10%);
+  }
+
+  span {
+    font-weight: 600;
+    font-size: 12px;
+    margin-right: 0.5em;
+  }
+}
